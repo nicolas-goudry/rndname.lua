@@ -366,6 +366,11 @@ local right = {
 rndname.generate = function()
   local li = math.random(#left)
   local ri = math.random(#right)
+  local name = left[li] .. "_" .. right[ri]
+
+  if name == "boring_wozniak" then -- Steve Wozniak is not boring
+    return rndname.generate()
+  end
 
   return left[li] .. "_" .. right[ri]
 end
